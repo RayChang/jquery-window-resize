@@ -12,12 +12,12 @@
     for(var _index in _fnArray) {
       if(typeof _fnArray[_index].start === 'function') {
         $.windowResize.start[_index] = _fnArray[_index].start;
-      } else {
+      } else if(typeof _fnArray[_index].start !== 'undefined') {
         console.error('start attribute "' + _fnArray[_index].start + '" not function');
       }
       if(typeof _fnArray[_index].end === 'function') {
         $.windowResize.end[_index] = _fnArray[_index].end;
-      } else {
+      } else if(typeof _fnArray[_index].end !== 'undefined') {
         console.error('end attribute "' + _fnArray[_index].end + '" not function');
       }
     }
